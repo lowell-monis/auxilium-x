@@ -1,5 +1,5 @@
 'use client';
-import { Stack, Box } from "@mui/material";
+import { Stack, Box, TextField, Button } from "@mui/material";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -38,6 +38,17 @@ export default function Home() {
               </Box>
             </Box>
           ))}
+      </Stack>
+      <Stack direction="row" spacing={2}>
+        <TextField
+        label="message"
+        fullWidth
+        value={message}
+        onAbort={(e) => setMessage(e.target.value)}
+        />
+        <Button variant="contained">
+          Send
+        </Button>
       </Stack>
     </Stack>
   </Box>
